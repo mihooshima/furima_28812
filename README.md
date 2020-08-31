@@ -16,10 +16,10 @@
 
 ### Association
 
-has_many : product
-has_many : purchase_management
+has_many : products
+has_many : purchase_managements
 
-## product テーブル
+## products テーブル
 
 | Column         | Type       | Options                        |
 | -------        | ---------- | ------------------------------ |
@@ -36,27 +36,26 @@ has_many : purchase_management
 
 ### Association
 
-belongs_to : user
-has_one : purchase_management
+belongs_to : users
+has_one : purchase_managements
 
 ## destination　テーブル
 
 | Column        　　　 | Type    　| Options                     |
 | -------       　　　 | ----------|------------------------- 　 |
-| zip-code       　　　| sting 　　 | null: false               　|
+| zip-code       　　　| string 　　| null: false               　|
 | prefectures   　　　 | integer 　 | null: false               　|
-| city          　　　 | sting     | null: false                 |
-| address        　　　| sting     | null: false                 |
-| building            | sting     |                             |
-| phone          　　　| sting     | null: false                 |
+| city          　　　 | string     | null: false                 |
+| address        　　　| string     | null: false                 |
+| building            | string     |                             |
+| phone          　　　| string     | null: false                 |
 | purchase_management  | references  | null: false 、FK :true    |
 
 
 ### Association : purchase_management
 
 
-belongs_to : purchase_management
-
+belongs_to : purchase_managements
 
 ##　purchase_management　テーブル
 
@@ -67,6 +66,6 @@ belongs_to : purchase_management
 
 ### Association
 
-belongs_to :product
-belongs_to :user
+belongs_to :products
+belongs_to :users
 has_one :address
