@@ -36,7 +36,7 @@ has_many : purchase_managements
 
 ### Association
 
-belongs_to : users
+belongs_to : user
 has_one : purchase_managements
 
 ## destination　テーブル
@@ -55,7 +55,7 @@ has_one : purchase_managements
 ### Association : purchase_management
 
 
-belongs_to : purchase_managements
+belongs_to : purchase_management
 
 ##　purchase_management　テーブル
 
