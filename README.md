@@ -25,11 +25,12 @@ belong_to : users
 | -------        | ---------- | ------------------------------ |
 | user_id        | integer    | null: false, foreign_key: true |
 | picture        | integer    | null: false                    |
-| name           | integer    | null: false                    |
-| explanation    | integer    | null: false                    |
+| name           | string     | null: false                    |
+| explanation    | text       | null: false                    |
 | size           | integer    | null: false                    |
 | category       | integer    | null: false                    |
 | cost           | integer    | null: false                    |
+| price          | integer    | null: false                    |
 | days           | integer    | null: false                    |
 | shipping       | integer    | null: false                    |
 
@@ -46,6 +47,7 @@ belong_to : users
 | prefectures   　　　 | integer 　 | null: false               　|
 | city          　　　 | sting     | null: false                 |
 | address        　　　| sting     | null: false                 |
+| building            | sting     | null: false                 |
 | phone          　　　| string    | null: false                 |
 
 ### Association
@@ -59,7 +61,6 @@ belongs_to : purchase_management
 | -------     　      | ---------- | -------------------------     |
 | user      　 　     | references  | null: false, FK:true      　　|
 | items　    　       | references  | null: false 、FK :true        |
-| purchase　management | references | null: false,FK:true           |
 
 ### Association
 
