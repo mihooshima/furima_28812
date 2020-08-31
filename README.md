@@ -17,7 +17,7 @@
 ### Association
 
 has_many : product
-belong_to : users
+belong_to : purchase_management
 
 ## product テーブル
 
@@ -47,12 +47,13 @@ belong_to : users
 | prefectures   　　　 | integer 　 | null: false               　|
 | city          　　　 | sting     | null: false                 |
 | address        　　　| sting     | null: false                 |
-| building            | sting     | null: false                 |
-| phone          　　　| string    | null: false                 |
+| building            | sting     |                             |
+| phone          　　　| sting     | null: false                 |
+| user_id             | integer   | null: false                 |
 
-### Association
+### Association : purchase_management
 
-belongs_to : purchase_management
+belongs_to : 
 
 
 ##　purchase_management　テーブル
@@ -60,8 +61,8 @@ belongs_to : purchase_management
 | Column       　     | Type       | Options                       |
 | -------     　      | ---------- | -------------------------     |
 | user      　 　     | references  | null: false, FK:true      　　|
-| items　    　       | references  | null: false 、FK :true        |
+| item　　    　       | references  | null: false 、FK :true        |
 
 ### Association
 
-has_many : product
+belongs_to : product
