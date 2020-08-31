@@ -50,10 +50,10 @@ belong_to : users
 
 ### Association
 
-belongs_to : purchase management　テーブル
+belongs_to : purchase_management
 
 
-##purchase management　テーブル
+##　purchase_management　テーブル
 
 | Column       　     | Type       | Options                       |
 | -------     　      | ---------- | -------------------------     |
@@ -61,3 +61,6 @@ belongs_to : purchase management　テーブル
 | items　    　       | references  | null: false 、FK :true        |
 | purchase　management | references | null: false,FK:true           |
 
+### Association
+
+has_many : product
