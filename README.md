@@ -64,6 +64,7 @@ belongs_to :user
 | first_name     | integer    | null: false                    |
 | family_name    | integer    | null: false                    |
 | zip-code       | integer    | null: false                    |
+| prefectures    | integer    | null: false                    |
 | address        | integer    | null: false                    |
 | phone          | integer    | null: false                    |
 | card_number    | integer    | null: false                    |
