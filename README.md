@@ -16,8 +16,8 @@
 
 ### Association
 
-has_many : product
-belong_to : purchase_management
+belongs_to : product
+has_many : purchase_management
 
 ## product テーブル
 
@@ -36,8 +36,8 @@ belong_to : purchase_management
 
 ### Association
 
-has_many : destination
-belong_to : users
+belongs to : destination
+has many : users
 
 ## destination　テーブル
 
@@ -49,11 +49,13 @@ belong_to : users
 | address        　　　| sting     | null: false                 |
 | building            | sting     |                             |
 | phone          　　　| sting     | null: false                 |
-| user_id             | integer   | null: false                 |
+| purchase_management  | references  | null: false 、FK :true    |
+
 
 ### Association : purchase_management
 
-belongs_to : 
+
+belongs_to : purchase_management
 
 
 ##　purchase_management　テーブル
