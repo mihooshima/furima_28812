@@ -12,7 +12,6 @@ describe User do
       it "nicknameが空だと登録できない" do # Userのインスタンス生成
         @user.nickname = ""  # nicknameの値を空にする'
         @user.valid?
-        binding.pry
         expect(@user.errors.full_messages).to include("Nickname can't be blank")
       end
       it "emailが空では登録できない" do
