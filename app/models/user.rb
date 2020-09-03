@@ -16,3 +16,5 @@ class User < ApplicationRecord
     validates :family_name_kana, format: {with:/[\p{katakana}ー－&&[ -~｡-ﾟ]]+/}
 end
 
+end
+
