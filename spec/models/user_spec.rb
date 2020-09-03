@@ -7,8 +7,8 @@ describe User do
   describe 'ユーザー情報' do
     context '新規登録がうまくいくとき' do
       it "全ての値が入って登録できる" do
-        user = FactoryBot.build(:user)
-
+        user = FactoryBot.build(:user) 
+    context '新規登録がうまくいかない時' do
       it "nicknameが空だと登録できない" do # Userのインスタンス生成
         @user.nickname = ""  # nicknameの値を空にする'
         @user.valid?
@@ -33,12 +33,14 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include（”Email is using ＠”）
       end
+      context '新規登録がうまくいかない時' do
       it  "passwordが空では登録できない" do
         user = FactoryBot.build(:user) 
         @user.password = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
        end
+      context '新規登録がうまくいかない時' do
       it "passwordが6文字以下であれば登録できない" do
         user = FactoryBot.build(:user) 
         @user.password = "aaaaaa"
