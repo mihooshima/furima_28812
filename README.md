@@ -21,36 +21,35 @@ has_many : purchase_managements
 
 ## products テーブル
 
-| Column         | Type      | Options                        |
-| -------        | ----------| -----------------------------  |
-| user_id        | integer   | null: false, foreign_key: true |
-| picture        | integer   | null: false                    |
-| name           | string    | null: false                    |
-| explanation    | text      | null: false                    |
-| size           | integer   | null: false                    |
-| category       | integer   | null: false                    |
-| products status| integer   | null: false                    |
-| cost           | integer   | null: false                    |
-| price          | integer   | null: false                    |
-| days           | integer   | null: false                    |
-| shipping       | integer   | null: false                    |
+| Column         | Type       | Options                        |
+| -------        | ---------- | ------------------------------ |
+| user_id        | integer    | null: false, foreign_key: true |
+| picture        | integer    | null: false                    |
+| name           | string     | null: false                    |
+| explanation    | text       | null: false                    |
+| size           | integer    | null: false                    |
+| category       | integer    | null: false                    |
+| cost           | integer    | null: false                    |
+| price          | integer    | null: false                    |
+| days           | integer    | null: false                    |
+| shipping       | integer    | null: false                    |
 
 ### Association
 
 belongs_to : user
 has_one : purchase_management
 
-## destinationテーブル
+## destination　テーブル
 
-| Column            | Type       | Options                  |
-| -------            | ----------|-------------------------  |
-| zip-code           | string    | null: false               |
-| prefectures        | integer   | null: false               |
-| city               | string     | null:false               |
-| address            | string     | null:false               |
-| building           | string      |                          |
-| phone              | string     | null: false              |
-| purchase_management| references | null: false 、FK :true   |
+| Column        　　　 | Type    　| Options                     |
+| -------       　　　 | ----------|------------------------- 　 |
+| zip-code       　　　| string 　　| null: false               　|
+| prefectures   　　　 | integer 　 | null: false               　|
+| city          　　　 | string     | null: false                 |
+| address        　　　| string     | null: false                 |
+| building            | string     |                             |
+| phone          　　　| string     | null: false                 |
+| purchase_management  | references  | null: false 、FK :true    |
 
 
 ### Association : purchase_management
@@ -58,12 +57,12 @@ has_one : purchase_management
 
 belongs_to : purchase_management
 
-##  purchase_managementテーブル
+##　purchase_management　テーブル
 
-| Column        | Type       | Options                       |
-| -------       | ---------- | -------------------------     |
-| user          | references  | null: false, FK:true          |
-| item          | references  | null: false 、FK :true        |
+| Column       　     | Type       | Options                       |
+| -------     　      | ---------- | -------------------------     |
+| user      　 　     | references  | null: false, FK:true      　　|
+| item　　    　       | references  | null: false 、FK :true        |
 
 ### Association
 
