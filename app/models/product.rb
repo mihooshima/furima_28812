@@ -15,7 +15,7 @@ class Product < ApplicationRecord
     validates :shipping_id
     validates :day_id
     validates :price
-    validates_inclusion_of :price, in: 300..99_999_999
+    # validates_inclusion_of :price, in: 300..99_999_999
   end
 
   with_options numericality: { greater_than:1} do
@@ -32,4 +32,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :day
   belongs_to_active_hash :products_status
   belongs_to_active_hash :shipping
+
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+
 end

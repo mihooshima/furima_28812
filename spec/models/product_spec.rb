@@ -56,10 +56,25 @@ RSpec.describe Product, type: :model do
           expect(@product.errors.full_messages).to include("Day must be greater than 1")
         end
         it '価格についての情報が空では登録できない' do
-          @product.price = ¥300~¥9,999,999
+          @product.price =  ""
           @product.valid?
           expect(@product.errors.full_messages).to include("Price can't be blank")
+        end
+        it '価格が¥299以下だと登録できない' do
+          @product.price = 100
+          # @product.price_confirmation = 299
+          @product.valid?
+          expect(@product.errors.full_messages).to include("Price must be greater than or equal to 300")
+        end
+        it '価格が¥9,999,999以上だと登録できない' do
+          @product.price = 10000000
+          # @product.price_confirmation = 9999999
+          @product.valid?
+          expect(@product.errors.full_messages).to include("Price must be less than or equal to 9999999")
         end
       end
     end
 end
+
+  
+  
