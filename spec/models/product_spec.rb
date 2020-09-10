@@ -15,11 +15,11 @@ RSpec.describe Product, type: :model do
       end
 
       context '商品出品がうまくいかないとき' do
-        # it'画像が空では登録できない' do
-        #   @product.image = ''
-        #   @product.valid?
-        #   expect(@product.errors.full_messages).to include("Image can't be blank")
-        # end
+        it'画像が空では登録できない' do
+          @product.image = ''
+          @product.valid?
+          expect(@product.errors.full_messages).to include("Image can't be blank")
+        end
         it '商品名が空では登録できない' do
           @product.name = ''
           @product.valid?
@@ -56,7 +56,7 @@ RSpec.describe Product, type: :model do
           expect(@product.errors.full_messages).to include("Day must be greater than 1")
         end
         it '価格についての情報が空では登録できない' do
-          @product.price = ''
+          @product.price = ¥300~¥9,999,999
           @product.valid?
           expect(@product.errors.full_messages).to include("Price can't be blank")
         end
