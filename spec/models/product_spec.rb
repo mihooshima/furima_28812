@@ -14,7 +14,7 @@ RSpec.describe Product, type: :model do
       end
 
       context '商品出品がうまくいかないとき' do
-        it '画像は空では登録できない' do
+        expect'画像は空では登録できない' do
           @product.image = nil
           product.valid?
         end

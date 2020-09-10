@@ -18,11 +18,11 @@ class Product < ApplicationRecord
   end
 
   with_options numericality: { greater_than:1} do
-    validates :category
-    validates :products_status
-    validates :shipping_cost
-    validates :shipping
-    validates :day
+    validates :category_id
+    validates :products_status_id
+    validates :shipping_cost_id
+    validates :shipping_id
+    validates :day_id
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
