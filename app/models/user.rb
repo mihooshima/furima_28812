@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   # with_options presence: true do
   #   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  #   validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' 
+  #   validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
   #   validates :password, length: { minimum: 5}
   #   validates :nickname
   #   validates :email
@@ -14,7 +14,5 @@ class User < ApplicationRecord
   #   validates :family_name
   #   validates :first_name_kana, format: {with:/[\p{katakana}ー－&&[ -~｡-ﾟ]]+/}
   #   # with_options presence: true do:family_name_kana, format: {with:/[\p{katakana}ー－&&[ -~｡-ﾟ]]+/}
-# end
-
+  # end
 end
-
