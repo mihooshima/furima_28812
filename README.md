@@ -40,17 +40,17 @@ has_many : purchase_managements
 belongs_to : user
 has_one : purchase_management
 
-## destinationテーブル
+## destination  テーブル
 
-| Column            | Type       | Options                  |
-| -------            | ----------|-------------------------  |
-| zip-code           | string    | null: false               |
-| prefectures        | integer   | null: false               |
-| city               | string     | null:false               |
-| address            | string     | null:false               |
-| building           | string      |                          |
-| phone              | string     | null: false              |
-| purchase_management| references | null: false 、FK :true   |
+| Column       | Type   |Options                   |
+| -------      | -------  ------------------------- |
+| zip-code     | string   | null:false              |
+| prefectures  | integer  | null:false              |
+| city         | string   null:false                |
+| address      | string     | null：false                 |
+| building            | string     |                             |
+| phone          　　　| string     | null: false                 |
+| purchase_management  | references  | null: false 、FK :true    |
 
 
 ### Association : purchase_management
