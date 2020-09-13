@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @product = Product.all
+    @products.order = Product.all
   end
 
   def new
@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    binding.pry
     if @product.valid?
       @product.save
       redirect_to root_path

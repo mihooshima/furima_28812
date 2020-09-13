@@ -60,7 +60,7 @@ belongs_to : purchase_management
 
 ##  purchase_managementテーブル
 
-| Column        | Type       | Options                       |
+| Column        | Type      |Options                       |
 | -------       | ---------- | -------------------------     |
 | user          | references  | null: false, FK:true          |
 | item          | references  | null: false 、FK :true        |

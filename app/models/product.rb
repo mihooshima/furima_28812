@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
-  has_one :purchase_management
+  has_one :purchese_management
   has_one_attached :image
 
   # validates :category_id, :cost_id, :day_id, :products_status_id, :shipping_id, presence: true
@@ -18,7 +18,7 @@ class Product < ApplicationRecord
     # validates_inclusion_of :price, in: 300..99_999_999
   end
 
-  with_options numericality: { greater_than:1} do
+  with_options numericality: { greater_than:0} do
     validates :category_id
     validates :products_status_id
     validates :shipping_cost_id
