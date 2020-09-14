@@ -21,11 +21,14 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
-     @product = Product.find(params[:id])
+  def edit
+    if @product.user_id != current_user.id
+      redirect_to action :index
+    end
   end
 
-  def edit
+  def show
+     @product = Product.find(params[:id])
   end
  
   def update
