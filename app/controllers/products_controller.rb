@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products.order = Product.all
+    @products = Product.all.order(created_at: :desc)
   end
 
   def new
@@ -15,6 +15,10 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+     @product = Product.find(params[:id])
   end
 
   private
