@@ -29,20 +29,13 @@ class ProductsController < ApplicationController
     else
       render'show'
     end
-  
-    
-
-      # @product = Product.find(params[:id])
-      # if  @product.destroy
-      #   redirect_to root_path, alert: "商品を削除しました"
-      # else
-    
-    # else
-    #   render :show
-    # end
   end
 
   private
+
+  def set_product
+    @item = Item.find(params[:id])
+  end
 
   def product_params
     params.require(:product).permit(:name, :explanation, :price, :category_id, :image, :shipping_id, :shipping_cost_id,:day_id, :products_status_id).merge(user_id: current_user.id)
