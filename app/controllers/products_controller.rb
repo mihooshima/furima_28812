@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action : only:[:show,:destroy]
+  before_action : @product,only:[:show,:destroy]
   def index
     @products = Product.all.order(created_at: :desc)
   end
@@ -23,7 +23,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     if @product.destroy
       redirect_to root_path
     else
