@@ -32,14 +32,10 @@ class ProductsController < ApplicationController
   end
  
   def update
-    if @product.user_id == current_user.id
-      if @product.update(product_params)
-        redirect_to product_path(@product.id)
-      else
-        redirect_to action: :edit
-      end
+    if @product.update(product_params)
+        redirect_to product_path
     else
-      redirect_to action: :edit
+     render'edit'
     end
   end
 
@@ -58,3 +54,5 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
  end
+
+ 
