@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action : only:[:show,:destroy]
   def index
     @products = Product.all.order(created_at: :desc)
   end
