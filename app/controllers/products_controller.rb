@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action : @product,only:[:show,:destroy]
+  before_action :set_product ,only:[:show,:destroy]
   def index
     @products = Product.all.order(created_at: :desc)
   end
@@ -19,7 +19,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-     @product = Product.find(params[:id])
   end
 
   def destroy
