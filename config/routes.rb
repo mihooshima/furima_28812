@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #get 'articles/index'
   #get 'articles/new'
   root to: 'products#index'
-  resources :products
-
-
+  resources :products do
+    resources :orders , only: [:index, :create]
   end
+end
