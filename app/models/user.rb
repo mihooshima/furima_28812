@@ -8,7 +8,7 @@ class User < ApplicationRecord
      PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
      katakana = /[ァ-ヶ]+/
       validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
-      validates :password, length: { minimum: 5}
+      # validates :password, length: { minimum: 5}
       validates :nickname
       validates :email
       validates :first_name, format: {with: /[一-龥ぁ-ん]/}
