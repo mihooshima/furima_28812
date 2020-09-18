@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   def index
     @order = PurcheseManagementAddress.new
     @product = Product.find(params[:product_id])
-    redirect_to root_path if current_user.id == @product.user_id && request.referrer.nil?
+    return redirect_to root_path if current_user.id == @product.user_id || @product.purchese_management != nil
   end
 
   private

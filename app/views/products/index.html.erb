@@ -160,10 +160,11 @@
         <% end %>
       </li>
       
+      <%end%>
       <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
       <%# 商品がない場合のダミー %>
-      <%# 商品がある場合は表示されないようにしましょう %>
+       <% if @product = nil %>
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
@@ -181,17 +182,18 @@
         </div>
         <% end %>
       </li>
-    <%end%>
+      <%end%>
+ 
       <%# //商品がある場合は表示されないようにしましょう %>
       <%# //商品がない場合のダミー %>
     </ul>
   </div>
   <%# //商品一覧 %>
 </div>
-<a href= "/products/new" >
-  <div class='purchase-btn'>
-    <span class='purchase-btn-text'>出品する</span>
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>出品する</span>
+  <a href="/items/new">
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    </a>
   </div>
-</a>
 <%= render "shared/footer" %>
