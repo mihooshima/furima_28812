@@ -48,7 +48,7 @@ has_one : purchase_management
 | prefectures  | integer  | null:false              |
 | city         | string   null:false                |
 | address      | string     | null：false                 |
-| building            | string     |                             |
+| building            | string   |                             |
 | phone          　　　| string     | null: false                 |
 | purchase_management  | references  | null: false 、FK :true    |
 
